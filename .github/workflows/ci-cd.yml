@@ -30,10 +30,6 @@ jobs:
         run: npm ci
         if: steps.cache.outputs.cache-hit != 'true'
 
-      - name: Install CDK dependencies
-        working-directory: ./
-        run: npm ci
-
       - name: Deploy CDK Stack
         working-directory: ./
         run: npx cdk deploy --require-approval never
